@@ -137,16 +137,20 @@
       return null;
     }
 
+    function hexToInt(hex) {
+      return parseInt(hex.replace('#', ''), 16);
+    }
+
     document.getElementById('config-form').onsubmit = function(e) {
       e.preventDefault();
       var config = {
-        BG_COLOR: document.getElementById('BG_COLOR').value,
-        TIME_COLOR: document.getElementById('TIME_COLOR').value,
-        WEATHER_COLOR: document.getElementById('WEATHER_COLOR').value,
-        DATE_COLOR: document.getElementById('DATE_COLOR').value,
-        BATTERY_COLOR: document.getElementById('BATTERY_COLOR').value,
-        PHONE_BATTERY_COLOR: document.getElementById('PHONE_BATTERY_COLOR').value,
-        STEPBAR_COLOR: document.getElementById('STEPBAR_COLOR').value,
+        BG_COLOR: hexToInt(document.getElementById('BG_COLOR').value),
+        TIME_COLOR: hexToInt(document.getElementById('TIME_COLOR').value),
+        WEATHER_COLOR: hexToInt(document.getElementById('WEATHER_COLOR').value),
+        DATE_COLOR: hexToInt(document.getElementById('DATE_COLOR').value),
+        BATTERY_COLOR: hexToInt(document.getElementById('BATTERY_COLOR').value),
+        PHONE_BATTERY_COLOR: hexToInt(document.getElementById('PHONE_BATTERY_COLOR').value),
+        STEPBAR_COLOR: hexToInt(document.getElementById('STEPBAR_COLOR').value),
         STEPBAR_VISIBLE: document.getElementById('STEPBAR_VISIBLE').checked
       };
       var return_to = getQueryParam('return_to');
