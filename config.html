@@ -6,7 +6,7 @@
   <style>
     body { font-family: sans-serif; margin: 2em; background: #f4f4f4; }
     label { display: block; margin-top: 1em; }
-    input[type="color"] { margin-left: 1em; }
+    select { margin-left: 1em; }
     .button { margin-top: 2em; padding: 1em 2em; font-size: 1.2em; }
   </style>
 </head>
@@ -14,25 +14,109 @@
   <h2>Skagen Watchface Einstellungen</h2>
   <form id="config-form">
     <label>Hintergrundfarbe:
-      <input type="color" id="BG_COLOR" value="#000000">
+      <select id="BG_COLOR">
+        <option value="#000000">Schwarz</option>
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>Uhrzeit-Farbe:
-      <input type="color" id="TIME_COLOR" value="#FFFFFF">
+      <select id="TIME_COLOR">
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#000000">Schwarz</option>
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>Wetter-Farbe:
-      <input type="color" id="WEATHER_COLOR" value="#FFFFFF">
+      <select id="WEATHER_COLOR">
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#000000">Schwarz</option>
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>Datum-Farbe:
-      <input type="color" id="DATE_COLOR" value="#FFFFFF">
+      <select id="DATE_COLOR">
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#000000">Schwarz</option>
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>Pebble-Batterie-Farbe:
-      <input type="color" id="BATTERY_COLOR" value="#FFFFFF">
+      <select id="BATTERY_COLOR">
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#000000">Schwarz</option>
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>Handy-Batterie-Farbe:
-      <input type="color" id="PHONE_BATTERY_COLOR" value="#FFFFFF">
+      <select id="PHONE_BATTERY_COLOR">
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#000000">Schwarz</option>
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>Stepbar-Farbe:
-      <input type="color" id="STEPBAR_COLOR" value="#FF0000">
+      <select id="STEPBAR_COLOR">
+        <option value="#FF0000">Rot</option>
+        <option value="#FFFFFF">Weiß</option>
+        <option value="#000000">Schwarz</option>
+        <option value="#FFFF00">Gelb</option>
+        <option value="#00FF00">Grün</option>
+        <option value="#0000FF">Blau</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Grau</option>
+        <option value="#FFA500">Orange</option>
+        <option value="#964B00">Braun</option>
+      </select>
     </label>
     <label>
       <input type="checkbox" id="STEPBAR_VISIBLE" checked>
