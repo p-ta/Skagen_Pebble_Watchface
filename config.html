@@ -118,16 +118,16 @@
 
     // Mapping von HTML-HEX zu Pebble-GColor (8-Bit)
     const pebbleColors = {
-      "#000000": 0x00, // Schwarz
-      "#FFFFFF": 0xFF, // Weiß
-      "#FF0000": 0xF8, // Rot
-      "#FFFF00": 0xE0, // Gelb
-      "#00FF00": 0xC4, // Grün
-      "#0000FF": 0x1F, // Blau
-      "#00FFFF": 0xFC, // Cyan
-      "#808080": 0xAA, // Grau
-      "#FF00FF": 0xC0  // Magenta
-    };
+  "#000000": 0x00, // Schwarz
+  "#FFFFFF": 0xFF, // Weiß
+  "#FF0000": 0xE0, // Rot
+  "#FFFF00": 0xFC, // Gelb
+  "#00FF00": 0xC0, // Grün
+  "#0000FF": 0x1F, // Blau
+  "#00FFFF": 0xFF, // Cyan (wie Weiß)
+  "#808080": 0xAA, // Grau
+  "#FF00FF": 0xF8  // Magenta
+};
 
     document.getElementById('config-form').onsubmit = function(e) {
       e.preventDefault();
