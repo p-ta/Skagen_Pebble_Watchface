@@ -116,21 +116,30 @@
       return null;
     }
 
-    function hexToInt(hex) {
-      return parseInt(hex.replace('#', ''), 16);
-    }
+    // Mapping von HTML-HEX zu Pebble-GColor (8-Bit)
+    const pebbleColors = {
+      "#000000": 0x00, // Schwarz
+      "#FFFFFF": 0xFF, // Weiß
+      "#FF0000": 0xF8, // Rot
+      "#FFFF00": 0xE0, // Gelb
+      "#00FF00": 0xC4, // Grün
+      "#0000FF": 0x1F, // Blau
+      "#00FFFF": 0xFC, // Cyan
+      "#808080": 0xAA, // Grau
+      "#FF00FF": 0xC0  // Magenta
+    };
 
     document.getElementById('config-form').onsubmit = function(e) {
       e.preventDefault();
       var config = {
-        BG_COLOR: hexToInt(document.getElementById('BG_COLOR').value),
-        TIME_COLOR: hexToInt(document.getElementById('TIME_COLOR').value),
-        WEATHER_COLOR: hexToInt(document.getElementById('WEATHER_COLOR').value),
-        DATE_COLOR: hexToInt(document.getElementById('DATE_COLOR').value),
-        BATTERY_COLOR: hexToInt(document.getElementById('BATTERY_COLOR').value),
-        PHONE_BATTERY_COLOR: hexToInt(document.getElementById('PHONE_BATTERY_COLOR').value),
-        STEPBAR_COLOR: hexToInt(document.getElementById('STEPBAR_COLOR').value),
-        STEPBAR_VISIBLE: document.getElementById('STEPBAR_VISIBLE').checked
+        10: pebbleColors[document.getElementById('BG_COLOR').value],            // BG_COLOR
+        11: pebbleColors[document.getElementById('TIME_COLOR').value],          // TIME_COLOR
+        12: pebbleColors[document.getElementById('WEATHER_COLOR').value],       // WEATHER_COLOR
+        13: pebbleColors[document.getElementById('DATE_COLOR').value],          // DATE_COLOR
+        14: pebbleColors[document.getElementById('BATTERY_COLOR').value],       // BATTERY_COLOR
+        15: pebbleColors[document.getElementById('PHONE_BATTERY_COLOR').value], // PHONE_BATTERY_COLOR
+        16: pebbleColors[document.getElementById('STEPBAR_COLOR').value],       // STEPBAR_COLOR
+        18: document.getElementById('STEPBAR_VISIBLE').checked ? 1 : 0          // STEPBAR_VISIBLE (optional)
       };
       var return_to = getQueryParam('return_to');
       var locationStr = return_to ? decodeURIComponent(return_to) : 'pebblejs://close#';
