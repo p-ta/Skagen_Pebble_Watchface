@@ -117,17 +117,18 @@
     }
 
     // Mapping von HTML-HEX zu Pebble-GColor (8-Bit)
-    const pebbleColors = {
-  "#000000": 0x00, // Schwarz
+  const pebbleColors = {
+  "#000000": 0xC0, // Schwarz
   "#FFFFFF": 0xFF, // Weiß
   "#FF0000": 0xE0, // Rot
   "#FFFF00": 0xFC, // Gelb
-  "#00FF00": 0xC0, // Grün
-  "#0000FF": 0x1F, // Blau
-  "#00FFFF": 0xFF, // Cyan (wie Weiß)
+  "#00FF00": 0xDC, // Grün
+  "#0000FF": 0xC3, // Blau
+  "#00FFFF": 0xDF, // Cyan
   "#808080": 0xAA, // Grau
-  "#FF00FF": 0xF8  // Magenta
-};
+  "#FF00FF": 0xE3  // Magenta
+};        
+    
 
     document.getElementById('config-form').onsubmit = function(e) {
       e.preventDefault();
