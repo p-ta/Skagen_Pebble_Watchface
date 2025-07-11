@@ -147,14 +147,14 @@
     document.getElementById('config-form').onsubmit = function(e) {
       e.preventDefault();
       var config = {
-        10: pebbleColors[document.getElementById('BG_COLOR').value],            // BG_COLOR
-        11: pebbleColors[document.getElementById('TIME_COLOR').value],          // TIME_COLOR
-        12: pebbleColors[document.getElementById('WEATHER_COLOR').value],       // WEATHER_COLOR
-        13: pebbleColors[document.getElementById('DATE_COLOR').value],          // DATE_COLOR
-        14: pebbleColors[document.getElementById('BATTERY_COLOR').value],       // BATTERY_COLOR
-        15: pebbleColors[document.getElementById('PHONE_BATTERY_COLOR').value], // PHONE_BATTERY_COLOR
-        16: pebbleColors[document.getElementById('STEPBAR_COLOR').value],       // STEPBAR_COLOR
-        17: pebbleColors[document.getElementById('STEPBAR_BG_COLOR').value]     // STEPBAR_BG_COLOR
+        3: pebbleColors[document.getElementById('BG_COLOR').value],             // BG_COLOR
+        4: pebbleColors[document.getElementById('TIME_COLOR').value],           // TIME_COLOR
+        5: pebbleColors[document.getElementById('WEATHER_COLOR').value],        // WEATHER_COLOR
+        6: pebbleColors[document.getElementById('DATE_COLOR').value],           // DATE_COLOR
+        7: pebbleColors[document.getElementById('BATTERY_COLOR').value],        // BATTERY_COLOR
+        8: pebbleColors[document.getElementById('PHONE_BATTERY_COLOR').value],  // PHONE_BATTERY_COLOR
+        9: pebbleColors[document.getElementById('STEPBAR_COLOR').value],        // STEPBAR_COLOR
+        11: pebbleColors[document.getElementById('STEPBAR_BG_COLOR').value]     // STEPBAR_BG_COLOR
       };
       var return_to = getQueryParam('return_to');
       var locationStr = return_to ? decodeURIComponent(return_to) : 'pebblejs://close#';
