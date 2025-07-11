@@ -117,6 +117,12 @@
         <option value="#FF00FF">Magenta</option>
       </select>
     </label>
+    <label>Nachtmodus (20:00-7:00 Uhr):
+      <select id="NIGHT_MODE">
+        <option value="0">Deaktiviert</option>
+        <option value="1">Aktiviert</option>
+      </select>
+    </label>
     <button type="submit" class="button">Speichern &amp; an Pebble senden</button>
   </form>
   <script>
@@ -154,7 +160,8 @@
         7: pebbleColors[document.getElementById('BATTERY_COLOR').value],        // BATTERY_COLOR
         8: pebbleColors[document.getElementById('PHONE_BATTERY_COLOR').value],  // PHONE_BATTERY_COLOR
         9: pebbleColors[document.getElementById('STEPBAR_COLOR').value],        // STEPBAR_COLOR
-        11: pebbleColors[document.getElementById('STEPBAR_BG_COLOR').value]     // STEPBAR_BG_COLOR
+        11: pebbleColors[document.getElementById('STEPBAR_BG_COLOR').value],    // STEPBAR_BG_COLOR
+        12: parseInt(document.getElementById('NIGHT_MODE').value)               // NIGHT_MODE
       };
       var return_to = getQueryParam('return_to');
       var locationStr = return_to ? decodeURIComponent(return_to) : 'pebblejs://close#';
