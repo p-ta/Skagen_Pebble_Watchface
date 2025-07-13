@@ -134,6 +134,30 @@
     <button type="submit" class="button">Speichern &amp; an Pebble senden</button>
   </form>
   <script>
+    // Aktuelle Einstellungen aus localStorage laden
+    window.addEventListener('load', function() {
+      // Gespeicherte Einstellungen laden, falls vorhanden
+      var savedConfig = localStorage.getItem('skagenConfig');
+      if (savedConfig) {
+        try {
+          var config = JSON.parse(savedConfig);
+          // Einstellungen in die Formulare eintragen
+          if (config.bg_color) document.getElementById('BG_COLOR').value = config.bg_color;
+          if (config.time_color) document.getElementById('TIME_COLOR').value = config.time_color;
+          if (config.weather_color) document.getElementById('WEATHER_COLOR').value = config.weather_color;
+          if (config.date_color) document.getElementById('DATE_COLOR').value = config.date_color;
+          if (config.battery_color) document.getElementById('BATTERY_COLOR').value = config.battery_color;
+          if (config.phone_battery_color) document.getElementById('PHONE_BATTERY_COLOR').value = config.phone_battery_color;
+          if (config.stepbar_color) document.getElementById('STEPBAR_COLOR').value = config.stepbar_color;
+          if (config.stepbar_bg_color) document.getElementById('STEPBAR_BG_COLOR').value = config.stepbar_bg_color;
+          if (config.night_mode !== undefined) document.getElementById('NIGHT_MODE').value = config.night_mode;
+          console.log("Gespeicherte Einstellungen geladen");
+        } catch (e) {
+          console.log("Fehler beim Laden der Einstellungen:", e);
+        }
+      }
+    });
+
     function getQueryParam(variable) {
       var query = window.location.search.substring(1);
       var vars = query.split('&');
@@ -161,6 +185,23 @@
 
     document.getElementById('config-form').onsubmit = function(e) {
       e.preventDefault();
+      
+      // Einstellungen für localStorage vorbereiten
+      var configForStorage = {
+        bg_color: document.getElementById('BG_COLOR').value,
+        time_color: document.getElementById('TIME_COLOR').value,
+        weather_color: document.getElementById('WEATHER_COLOR').value,
+        date_color: document.getElementById('DATE_COLOR').value,
+        battery_color: document.getElementById('BATTERY_COLOR').value,
+        phone_battery_color: document.getElementById('PHONE_BATTERY_COLOR').value,
+        stepbar_color: document.getElementById('STEPBAR_COLOR').value,
+        stepbar_bg_color: document.getElementById('STEPBAR_BG_COLOR').value,
+        night_mode: parseInt(document.getElementById('NIGHT_MODE').value)
+      };
+      
+      // Einstellungen im localStorage speichern
+      localStorage.setItem('skagenConfig', JSON.stringify(configForStorage));
+      
       var config = {
         3: pebbleColors[document.getElementById('BG_COLOR').value],             // BG_COLOR
         4: pebbleColors[document.getElementById('TIME_COLOR').value],           // TIME_COLOR
