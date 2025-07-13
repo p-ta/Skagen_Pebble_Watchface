@@ -143,6 +143,19 @@
     <label>Manueller Ort (Stadt, Land):
       <input type="text" id="MANUAL_LOCATION" placeholder="z.B. Berlin, Germany" style="width: 300px;">
     </label>
+    <label>Telefon-Batterie anzeigen:
+      <select id="PHONE_BATTERY_ENABLED">
+        <option value="1">Aktiviert</option>
+        <option value="0">Deaktiviert (nur Pebble-Batterie)</option>
+      </select>
+    </label>
+    <div style="margin: 1em 0; padding: 1em; background: #e8f4f8; border-left: 4px solid #2196F3;">
+      <strong>Telefon-Batterie benötigt PebbleBattery App:</strong><br>
+      <a href="https://github.com/user-attachments/files/21204531/PebbleBatteryService.zip" target="_blank" style="color: #2196F3; text-decoration: underline;">
+        📱 PebbleBattery.apk herunterladen
+      </a><br>
+      <small>Ohne diese App wird nur die Pebble-Batterie angezeigt.</small>
+    </div>
     <button type="submit" class="button">Speichern &amp; an Pebble senden</button>
   </form>
   <script>
