@@ -131,6 +131,18 @@
         <option value="1">Aktiviert</option>
       </select>
     </label>
+    <label>OpenWeather API Key:
+      <input type="text" id="API_KEY" placeholder="Ihr API Key (optional)" style="width: 300px;">
+    </label>
+    <label>Standort-Methode:
+      <select id="LOCATION_METHOD">
+        <option value="gps">GPS (automatisch)</option>
+        <option value="manual">Manueller Ort</option>
+      </select>
+    </label>
+    <label>Manueller Ort (Stadt, Land):
+      <input type="text" id="MANUAL_LOCATION" placeholder="z.B. Berlin, Germany" style="width: 300px;">
+    </label>
     <button type="submit" class="button">Speichern &amp; an Pebble senden</button>
   </form>
   <script>
@@ -151,6 +163,9 @@
           if (config.stepbar_color) document.getElementById('STEPBAR_COLOR').value = config.stepbar_color;
           if (config.stepbar_bg_color) document.getElementById('STEPBAR_BG_COLOR').value = config.stepbar_bg_color;
           if (config.night_mode !== undefined) document.getElementById('NIGHT_MODE').value = config.night_mode;
+          if (config.api_key) document.getElementById('API_KEY').value = config.api_key;
+          if (config.location_method) document.getElementById('LOCATION_METHOD').value = config.location_method;
+          if (config.manual_location) document.getElementById('MANUAL_LOCATION').value = config.manual_location;
           console.log("Gespeicherte Einstellungen geladen");
         } catch (e) {
           console.log("Fehler beim Laden der Einstellungen:", e);
@@ -196,7 +211,10 @@
         phone_battery_color: document.getElementById('PHONE_BATTERY_COLOR').value,
         stepbar_color: document.getElementById('STEPBAR_COLOR').value,
         stepbar_bg_color: document.getElementById('STEPBAR_BG_COLOR').value,
-        night_mode: parseInt(document.getElementById('NIGHT_MODE').value)
+        night_mode: parseInt(document.getElementById('NIGHT_MODE').value),
+        api_key: document.getElementById('API_KEY').value,
+        location_method: document.getElementById('LOCATION_METHOD').value,
+        manual_location: document.getElementById('MANUAL_LOCATION').value
       };
       
       // Einstellungen im localStorage speichern
@@ -211,7 +229,10 @@
         8: pebbleColors[document.getElementById('PHONE_BATTERY_COLOR').value],  // PHONE_BATTERY_COLOR
         9: pebbleColors[document.getElementById('STEPBAR_COLOR').value],        // STEPBAR_COLOR
         11: pebbleColors[document.getElementById('STEPBAR_BG_COLOR').value],    // STEPBAR_BG_COLOR
-        12: parseInt(document.getElementById('NIGHT_MODE').value)               // NIGHT_MODE
+        12: parseInt(document.getElementById('NIGHT_MODE').value),              // NIGHT_MODE
+        14: document.getElementById('API_KEY').value,                           // API_KEY
+        15: document.getElementById('LOCATION_METHOD').value,                   // LOCATION_METHOD
+        16: document.getElementById('MANUAL_LOCATION').value                    // MANUAL_LOCATION
       };
       var return_to = getQueryParam('return_to');
       var locationStr = return_to ? decodeURIComponent(return_to) : 'pebblejs://close#';
