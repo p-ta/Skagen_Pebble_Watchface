@@ -140,23 +140,23 @@
         <option value="manual">Manueller Ort</option>
       </select>
     </label>
-    <label>Manueller Ort (Stadt, Land):
-      <input type="text" id="MANUAL_LOCATION" placeholder="z.B. Berlin, Germany" style="width: 300px;">
+    <label>Manual location (city, country):
+      <input type="text" id="MANUAL_LOCATION" placeholder="e.g. Berlin, Germany" style="width: 300px;">
     </label>
-    <label>Telefon-Batterie anzeigen:
+    <label>Show phone battery:
       <select id="PHONE_BATTERY_ENABLED">
-        <option value="1">Aktiviert</option>
-        <option value="0">Deaktiviert (nur Pebble-Batterie)</option>
+        <option value="1">Enabled</option>
+        <option value="0">Disabled (Pebble battery only)</option>
       </select>
     </label>
     <div style="margin: 1em 0; padding: 1em; background: #e8f4f8; border-left: 4px solid #2196F3;">
-      <strong>Telefon-Batterie benötigt PebbleBattery App:</strong><br>
+      <strong>Phone battery requires PebbleBattery App:</strong><br>
       <span style="word-break: break-all; font-family: monospace; color: #333; background: #f5f5f5; padding: 2px 4px; border-radius: 3px; display: inline-block; margin: 0.5em 0;">
         https://github.com/p-ta/Skagen_Pebble_Watchface/blob/main/PebbleBatteryService.apk
       </span><br>
-      <small>Ohne diese App wird nur die Pebble-Batterie angezeigt.</small>
+      <small>Without this app, only the Pebble battery will be shown.</small>
     </div>
-    <button type="submit" class="button">Speichern &amp; an Pebble senden</button>
+    <button type="submit" class="button">Save & send to Pebble</button>
   </form>
   <script>
     // Aktuelle Einstellungen aus localStorage laden
