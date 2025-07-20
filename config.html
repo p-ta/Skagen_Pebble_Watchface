@@ -97,6 +97,20 @@
         <option value="#FFC0CB">Pink</option>
       </select>
     </label>
+    <label>Notification dot color:
+      <select id="NOTIFICATION_DOT_COLOR">
+        <option value="#FF0000">Red</option>
+        <option value="#FFFFFF">White</option>
+        <option value="#000000">Black</option>
+        <option value="#FFFF00">Yellow</option>
+        <option value="#00FF00">Green</option>
+        <option value="#0000FF">Blue</option>
+        <option value="#00FFFF">Cyan</option>
+        <option value="#808080">Gray</option>
+        <option value="#FF00FF">Magenta</option>
+        <option value="#FFC0CB">Pink</option>
+      </select>
+    </label>
     <label>Step bar color:
       <select id="STEPBAR_COLOR">
         <option value="#FF0000">Red</option>
@@ -173,6 +187,7 @@
           if (config.date_color) document.getElementById('DATE_COLOR').value = config.date_color;
           if (config.battery_color) document.getElementById('BATTERY_COLOR').value = config.battery_color;
           if (config.phone_battery_color) document.getElementById('PHONE_BATTERY_COLOR').value = config.phone_battery_color;
+          if (config.notification_dot_color) document.getElementById('NOTIFICATION_DOT_COLOR').value = config.notification_dot_color;
           if (config.stepbar_color) document.getElementById('STEPBAR_COLOR').value = config.stepbar_color;
           if (config.stepbar_bg_color) document.getElementById('STEPBAR_BG_COLOR').value = config.stepbar_bg_color;
           if (config.night_mode !== undefined) document.getElementById('NIGHT_MODE').value = config.night_mode;
@@ -222,6 +237,7 @@
         date_color: document.getElementById('DATE_COLOR').value,
         battery_color: document.getElementById('BATTERY_COLOR').value,
         phone_battery_color: document.getElementById('PHONE_BATTERY_COLOR').value,
+        notification_dot_color: document.getElementById('NOTIFICATION_DOT_COLOR').value,
         stepbar_color: document.getElementById('STEPBAR_COLOR').value,
         stepbar_bg_color: document.getElementById('STEPBAR_BG_COLOR').value,
         night_mode: parseInt(document.getElementById('NIGHT_MODE').value),
@@ -241,7 +257,8 @@
         7: pebbleColors[document.getElementById('BATTERY_COLOR').value],        // BATTERY_COLOR
         8: pebbleColors[document.getElementById('PHONE_BATTERY_COLOR').value],  // PHONE_BATTERY_COLOR
         9: pebbleColors[document.getElementById('STEPBAR_COLOR').value],        // STEPBAR_COLOR
-        11: pebbleColors[document.getElementById('STEPBAR_BG_COLOR').value],    // STEPBAR_BG_COLOR
+        18: pebbleColors[document.getElementById('NOTIFICATION_DOT_COLOR').value], // NOTIFICATION_DOT_COLOR
+        11: pebbleColors[document.getElementById('STEPBAR_COLOR').value],        // STEPBAR_COLOR
         12: parseInt(document.getElementById('NIGHT_MODE').value),              // NIGHT_MODE
         14: document.getElementById('API_KEY').value,                           // API_KEY
         15: document.getElementById('LOCATION_METHOD').value,                   // LOCATION_METHOD
